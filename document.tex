@@ -1,10 +1,9 @@
 \documentclass[runningheads]{llncs}
 
-\usepackage[applemac]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[ngerman, english]{babel}
 
 \usepackage[T1]{fontenc}
-
 \usepackage{amssymb}
 \setcounter{tocdepth}{3}
 \usepackage{graphicx}
@@ -21,35 +20,38 @@
 \lstset{numbers=left, numberstyle=\tiny, numbersep=5pt}
 
 \begin{document}
-
-\title{Code needs real customer data}
-\subtitle{Trends and Concepts in the Software Industry II - Development of Enterprise Software 2012 - Team 5}
-\author{Thomas B\"unger, Felix Leupold, Patrick Schilf, Johan Uhle, Lauritz Thamsen, Fabian Tschirnitz}
-\institute{Hasso Plattner Institute Potsdam}
+\mainmatter
+\title{Trends and Concepts in the Software Industry II: \\ Development of Enterprise Software}
+\author{Team 5: Providing Data Context During Development}
+\institute{Thomas Buenger, Felix Leupold, Johan Uhle, \\ Patrick Schilf, Lauritz Thamsen, Fabian Tschirschnitz \\[0.1in] Johannes Wust \\ Franziska Haeger, Dr. Anja Bog, Dr. Juergen Mueller, Prof. Hasso Plattner \\ Hasso-Plattner Institute}
+\date{March 15th, 2013}
 \maketitle
-
 
 \newpage
 
 %Head of Documentation - Patrick: gerade ziehen
 
-\section{Introdcution} %HoD
-%Seminar, Thema (deren how might we question), D-School Prozess
-%Design Thinking Einleitung (Felix)
-%preparation to our topic
+\section{Introduction}
+%HoD
+%Seminar, Seminarablauf, Thema (= deren how might we question)
+%(dabei Bezug zu unserem Subthema aufbauen)
 
+\section{Design Thinking}
+%Felix
+%intro to Design Thinking, its cycle and some intro to our results
+
+\input{content/understand}
 %Pre seminar interviews
 %Johan
-\input{content/understand}
 
 \section{Observe}
 %Johan
-%Bachelor projects, conventional development
+%Bachelor projects, conventional development (edit, build, compile)
 
 \section{Point of View}
-% Persona
-% Problem Statement/our how might we
 %Felix
+%Persona
+%Problem Statement, our how might we
 
 \section{Ideation}
 %Felix
@@ -66,13 +68,20 @@
 \section{Final Prototype}
 %Fabi
 
-\section{Feasibility Outlook}
-%open questions/related work
-%Lausi Mausi
+\section{Implementation Ideas}
+%Lauritz
+%tracing data contexts = database and parameters and state
+%sampling and domain experts
+
+\section{Open Questions}
+%Lauritz
+\subsection{Hardware Context}
+\subsection{Query Debugging}
+\subsection{Efficient Context Storing}
+%HANA time travel
 
 \section{Conclusion}
 %HoD
-
 
 %\bibliography{references}
 \bibstyle{splncs03}
