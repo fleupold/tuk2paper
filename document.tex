@@ -19,6 +19,18 @@
 \usepackage{listings}
 \lstset{numbers=left, numberstyle=\tiny, numbersep=5pt}
 
+\newboolean{showcomments}
+\setboolean{showcomments}{true} % SET TO false for camera-ready
+\ifthenelse{\boolean{showcomments}}
+	{	\newcommand{\nbnote}[2]{
+			\fbox{\bfseries\sffamily\scriptsize#1}
+			{\sf\small$\blacktriangleright$\textit{#2}$\blacktriangleleft$}
+		}
+	}
+	{	\newcommand{\nbnote}[2]{}
+	}
+\newcommand\todo[1]{\nbnote{TO DO}{#1}}
+
 \begin{document}
 \mainmatter
 \title{Trends and Concepts in the Software Industry II: \\ Development of Enterprise Software}
