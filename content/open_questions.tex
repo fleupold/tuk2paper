@@ -1,0 +1,10 @@
+%!TEX root = ../document.tex
+\section{Open Questions} \label{sec:OPEN_QUESTIONS}
+%Lauritz
+\subsection{Hardware Context}
+%runtime characteristics as, for example, query execution profiling depends on the hardware, hardware-aware data contexts, execution on actual hardwares or simulation of hardware, requires research, that is, hardware contexts are future work
+\subsection{Query Debugging}
+%besides seamless debugging of application-layer code and database-layer queries
+%seeing results and profiling information not only for complete queries and distinct subqueries in from clauses, but also for partial queries, obviously not possible to execute arbitrary parts of queries, as, for example, the select query might depend on the presence of a grouping (show example query), therefore, support developers in identifying meaningful parts of queries to, for example, just activate a part of the conditions available in a given where clause, obviously also requires a user interface that allows to select and deselect potentially combinations of just parts of queries
+\subsection{Efficient Context Storing}
+%many traces result in many contexts, which might be similar, consequentely, identifying and, subsequentely, storing common bases along with context differences might reduce the memory consumption of a context database significantly, for the database snapshots it might be possible to leverage HANA's time travel feature

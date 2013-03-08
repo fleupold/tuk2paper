@@ -84,40 +84,11 @@ March 15, 2013}
 \section{Final Prototype} \label{sec:FINAL_PROTOTYPE}
 %Fabi
 
-\section{Implementation Ideas} \label{sec:IMPLEMENTATION_IDEAS}
+\input{content/implementation_ideas.tex}
 %Lauritz
-Besides providing an unobstrusive user interface, either implemented as a plugin for an existing integrated development environment or else implemented in form of a complete development environment, an implementation of our idea would require components that gather data contexts from actual program runs as well as components that support developers in selecting appropriate and interesting data contexts during development.
 
-% maybe also say something about the user interface for selecting data contexts as well as for seeing and modifying state and queries...
-
-\subsection{Gathering Data Contexts}
-As our approach focuses on providing developers with actual runtime data already during development the user interface of an implementation of our approach depends on the availability of such data.
-Such data needs to be realistic to be useful to developers.
-For this reason, there are two approaches to gathering such runtime data for, for example, showing it when a developer clicks on a line of source code.
-Either, a developer's interaction could trigger a deterministic test that covers a specific piece of code that is of interest to the developer or else to capture such data before.
-Capturing data beforehand obviously also could rely on test runs, but additionaly could be recorded in live systems used by actual customer and, therefore, providing real runtime data.
-Moreover, another advantage of capturing data in advance might be that presenting such recorded data would not depend on running a potentially long-running test, but on fetching the data from a database, which of course also could be an in-memory database.
-A reasonable hybrid solution between those two approaches would record data not for every join point in the execution of the application of interest, but could capture data on the level of specific scopes as, for example, methods.
-To explore actual runtime situations the recorded data contexts of methods must consist of provided parameters, accessible state, as well as a snapshot of the database at the moment the method is entered.
-Snapshots of the database are necessary as the method might modify the database through embedded queries in ways that would not allow subsequent runs of that methods.
-That is, the database has to be snapshot at the entry to be able to execute the method and all included queries as often as necessary for exploration during development.
-\todo{code example}
-%tracing data contexts = snapshots of database and parameters and state, show code examples with parametrized queries
-%from test systems with copies of real customer data or from actually deployed and running customer systems
-\subsection{Selecting Data Contexts}
-%developer always makes the final decision, has to be able to tweak any preselection and also to explore the full extent of gathered data contexts
-%automatic sampling using clustering, include clustering image
-%tweaking or explicit preselection by involved domain experts
-
-\section{Open Questions} \label{sec:OPEN_QUESTIONS}
+\input{content/open_questions.tex}
 %Lauritz
-\subsection{Hardware Context}
-%runtime characteristics as, for example, query execution profiling depends on the hardware, hardware-aware data contexts, execution on actual hardwares or simulation of hardware, requires research, that is, hardware contexts are future work
-\subsection{Query Debugging}
-%besides seamless debugging of application-layer code and database-layer queries
-%seeing results and profiling information not only for complete queries and distinct subqueries in from clauses, but also for partial queries, obviously not possible to execute arbitrary parts of queries, as, for example, the select query might depend on the presence of a grouping (show example query), therefore, support developers in identifying meaningful parts of queries to, for example, just activate a part of the conditions available in a given where clause, obviously also requires a user interface that allows to select and deselect potentially combinations of just parts of queries
-\subsection{Efficient Context Storing}
-%many traces result in many contexts, which might be similar, consequentely, identifying and, subsequentely, storing common bases along with context differences might reduce the memory consumption of a context database significantly, for the database snapshots it might be possible to leverage HANA's time travel feature
 
 \section{Conclusion} \label{sec:CONCLUSION}
 %HoD
