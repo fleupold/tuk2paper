@@ -22,13 +22,13 @@
 \newboolean{showcomments}
 \setboolean{showcomments}{true} % SET TO false for camera-ready
 \ifthenelse{\boolean{showcomments}}
-	{	\newcommand{\nbnote}[2]{
-			\fbox{\bfseries\sffamily\scriptsize#1}
-			{\sf\small$\blacktriangleright$\textit{#2}$\blacktriangleleft$}
-		}
-	}
-	{	\newcommand{\nbnote}[2]{}
-	}
+  { \newcommand{\nbnote}[2]{
+      \fbox{\bfseries\sffamily\scriptsize#1}
+      {\sf\small$\blacktriangleright$\textit{#2}$\blacktriangleleft$}
+    }
+  }
+  { \newcommand{\nbnote}[2]{}
+  }
 \newcommand\todo[1]{\nbnote{TO DO}{#1}}
 
 \begin{document}
@@ -49,17 +49,19 @@ March 15, 2013}
 
 %Head of Documentation - Patrick: gerade ziehen
 
-\section{Introduction} 
+\section{Introduction}
 %HoD
 %Seminar, Seminarablauf, Thema (= deren how might we question)
 %(dabei Bezug zu unserem Subthema aufbauen)
 % close with an outline of this document, include references to all sections, see lables
 
 \input{content/design_thinking.tex}
-%intro to Design Thinking, its cycle and some intro to our results 
+%intro to Design Thinking, its cycle and some intro to our results
+
 
 \section{Understand} \label{sec:UNDERSTAND}
 %Johan
+\input{content/understand.tex}
 %Pre seminar interviews
 
 \section{Observe} \label{sec:OBSERVE}
