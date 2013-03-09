@@ -19,71 +19,81 @@
 \usepackage{listings}
 \lstset{numbers=left, numberstyle=\tiny, numbersep=5pt}
 
+\newboolean{showcomments}
+\setboolean{showcomments}{true} % SET TO false for camera-ready
+\ifthenelse{\boolean{showcomments}}
+	{	\newcommand{\nbnote}[2]{
+			\fbox{\bfseries\sffamily\scriptsize#1}
+			{\sf\small$\blacktriangleright$\textit{#2}$\blacktriangleleft$}
+		}
+	}
+	{	\newcommand{\nbnote}[2]{}
+	}
+\newcommand\todo[1]{\nbnote{TO DO}{#1}}
+
 \begin{document}
 \mainmatter
 \title{Trends and Concepts in the Software Industry II: \\ Development of Enterprise Software}
 \author{Team 5: Providing Data Context During Development}
-\institute{Thomas B\"unger, Felix Leupold, Johan Uhle, \\ Patrick Schilf, Lauritz Thamsen, Fabian Tschirschnitz \\[0.1in] Johannes Wust \\ Franziska Haeger, Dr. Anja Bog, Dr. Juergen M\"uller, Prof. Hasso Plattner \\ Hasso-Plattner Institute}
+\institute{Thomas B\"unger, Felix Leupold, Johan Uhle, \\ Patrick Schilf, Lauritz Thamsen, Fabian Tschirschnitz \\[0.1in] Johannes Wust \\
+Franziska Haeger, Dr. Anja Bog, Dr. Juergen M\"uller, Prof. Hasso Plattner \\
+Hasso-Plattner Institute \\[0.1in]
+March 15, 2013}
 \date{March 15th, 2013}
 \maketitle
 
 \newpage
 
+\tableofcontents
+\newpage
+
 %Head of Documentation - Patrick: gerade ziehen
 
-\section{Introduction}
+\section{Introduction} 
 %HoD
 %Seminar, Seminarablauf, Thema (= deren how might we question)
 %(dabei Bezug zu unserem Subthema aufbauen)
+% close with an outline of this document, include references to all sections, see lables
 
-\section{Design Thinking}
-%Felix
-%intro to Design Thinking, its cycle and some intro to our results
+\input{content/design_thinking.tex}
+%intro to Design Thinking, its cycle and some intro to our results 
 
-\input{content/understand}
-%Pre seminar interviews
+\section{Understand} \label{sec:UNDERSTAND}
 %Johan
+%Pre seminar interviews
 
-\section{Observe}
+\section{Observe} \label{sec:OBSERVE}
 %Johan
 %Bachelor projects, conventional development (edit, build, compile)
 
-\section{Point of View}
+\input{content/pov.tex}
 %Felix
-%Persona
-%Problem Statement, our how might we
 
-\section{Ideation}
+\section{Ideation} \label{sec:IDEATION}
 %Felix
 %our idea, plus make up some ideas that were not followed
 
-\section{Paper Prototype}
+\section{Paper Prototype} \label{sec:PAPER_PROTOTYPE}
 %Thomas
 
-\section{User Testing}
+\section{User Testing and Feedback} \label{sec:USER_TESTING}
 %Thomas
 %Testing
 %Feedback
 
-\section{Final Prototype}
+\section{Final Prototype} \label{sec:FINAL_PROTOTYPE}
 %Fabi
 
-\section{Implementation Ideas}
+\input{content/implementation_ideas.tex}
 %Lauritz
-%tracing data contexts = database and parameters and state
-%sampling and domain experts
 
-\section{Open Questions}
+\input{content/open_questions.tex}
 %Lauritz
-\subsection{Hardware Context}
-\subsection{Query Debugging}
-\subsection{Efficient Context Storing}
-%HANA time travel
 
-\section{Conclusion}
+\section{Conclusion} \label{sec:CONCLUSION}
 %HoD
 
-%\bibliography{references}
+\bibliography{references}
 \bibstyle{splncs03}
 \bibliographystyle{splncs03}
 
