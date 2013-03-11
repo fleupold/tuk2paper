@@ -20,6 +20,17 @@ That is, the database has to be snapshot at the entry to be able to execute the 
 %tracing data contexts = snapshots of database and parameters and state, show code examples with parametrized queries
 %from test systems with copies of real customer data or from actually deployed and running customer systems
 \subsection{Selecting Data Contexts}
-%developer always makes the final decision, has to be able to tweak any preselection and also to explore the full extent of gathered data contexts
-%automatic sampling using clustering, include clustering image
-%tweaking or explicit preselection by involved domain experts
+These tracing approaches generates potentially numerous data contexts.
+When our tool would trace real deployed systems, it could capture any number of data contexts for a particular scope.
+Given our system captures a data context for each method call and a specific method is, for example, called whenever a user clicks a button, the system would capture an arbitrarily high number of data contexts for this situation.
+Further, even when our tool only traces test execution on replicated databases, particular scopes might not only be executed in many test cases, but also multiple times in a single test case as, for example, obviously the case with methods called from loop bodies.
+For these reasons, a developer using our tool might be confronted with many data contexts for certain situations.
+However, as the number of available data contexts might be arbitrarily high and data context from the same trace might also overlap considerably, presenting all data contexts to the developer probably reduces usability significantly. 
+Approaches addressing this issue include automatic selection of interesting samples after clustering all data contexts, preselection of interesting data contexts through experts, and combinations of those two methods.
+Clustering could be based on at several dimensions, including \todo{some image for the clustering}:
+\begin{itemize}
+  \item size of the context's database
+  \item control flow that lead to this context
+  \item execution time of the context's scope
+\end{itemize}
+Nevertheless, even aided through automatic clustering or manual preselections, our tools should probably also support developers in exploring the full extent of available contexts and make the final decision on which specific data context they want to use during development.
