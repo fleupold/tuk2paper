@@ -27,17 +27,16 @@ When a developer then interacts with a specific line in the method's body, we co
 Accessible state includes global state and depending on the used programming language also state from surrounding scopes as, for example, from surrounding functions or the receiver.
 Snapshots of the database are necessary as methods that embedd queries might modify the database, potentially impeding subsequent runs of that method during the interactive development.
 \subsection{Selecting Data Contexts}
-These tracing approaches generates potentially numerous data contexts.
-When our tool would trace real deployed systems, it could capture any number of data contexts for a particular scope.
-Given our system captures a data context for each method call and a specific method is, for example, called whenever a user clicks a button, the system would capture an arbitrarily high number of data contexts for this situation.
-Further, even when our tool only traces test execution on replicated databases, particular scopes might not only be executed in many test cases, but also multiple times in a single test case as, for example, obviously the case with methods called from loop bodies.
-For these reasons, a developer using our tool might be confronted with many data contexts for certain situations.
-However, as the number of available data contexts might be arbitrarily high and data context from the same trace might also overlap considerably, presenting all data contexts to the developer probably reduces usability significantly. 
-Approaches addressing this issue include automatic selection of interesting samples after clustering all data contexts, preselection of interesting data contexts through experts, and combinations of those two methods.
-Clustering could be based on at several dimensions, including \todo{some image for the clustering}:
+The presented tracing approach generates potentially numerous data contexts for each method.
+Given our tool traces actually live systems deployed at customers, each user interaction might lead to recorded data contexts for all method executions that such interactions trigger.
+Further, even when our tool only traces test execution once on replicated databases, particular method might not only be executed in multiple test cases, but also multiple times in single test cases as, for example, obviously the case with methods called from loop bodies.
+For these reasons, developers using our proposed environment might be confronted with many data contexts for each statement of interest.
+However, as the number of available data contexts might be arbitrarily high and data context from the same trace might also overlap considerably, presenting all data contexts to the developer probably reduces usability significantly.
+Approaches addressing this issue include automatic selection of interesting samples after clustering all data contexts, preselection of interesting data contexts through expert users, and combinations of those two methods.
+Clustering data contexts could be based on several dimensions, including:
 \begin{itemize}
-  \item size of the context's database
+  \item size of the associated database snapshot
   \item control flow that lead to this context
-  \item execution time of the context's scope
+  \item execution time leading to the context
 \end{itemize}
 Nevertheless, even aided through automatic clustering or manual preselections, our tools should probably also support developers in exploring the full extent of available contexts and make the final decision on which specific data context they want to use during development.
