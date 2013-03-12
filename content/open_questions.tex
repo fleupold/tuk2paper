@@ -26,4 +26,5 @@ As our approach potentially results in many similar data contexts for any given 
 Such an optimization could try to exploit similarities between data contexts when storing them in, for example, a database.
 An implementation could find similar data contexts, identify common base contexts, and, consequentely, store base contexts once and only the differences to those base contexts for each particular context.
 As data contexts from the same traces using the same database potentially always overlap at least in their database snapshot, but probably also in the accessible state that needs to be captured, marking data contexts with an identifier for a particular trace might allow to identify similar data contexts faster.
-Further, the efficiency of storing data contexts could also apply advanced database features as, for example, HANA's time travel feature \todo{ref?}.
+Further, the efficiency of storing data contexts could proably also leverage advanced database features as, for example, \emph{SAP HANA's Time Travel} feature~\footnote{\url{http://help.sap.com/hana/html/sql_create_table_history_time_travel.html}, retrieved March 12, 2013} that allows to reset the database to a specific moment in time.
+Given this feature, an implementation would need to store only timestamps to establish the database part of data contexts instead of actual database snapshots.

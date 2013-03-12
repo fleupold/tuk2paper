@@ -26,6 +26,7 @@ Such an implementation would record all data necessary to actually run a method 
 When a developer then interacts with a specific line in the method's body, we could use ordinary breakpoints to establish the necessary runtime data for that specific line of interest. 
 Accessible state includes global state and depending on the used programming language also state from surrounding scopes as, for example, from surrounding functions or the receiver.
 Snapshots of the database are necessary as methods that embedd queries might modify the database, potentially impeding subsequent runs of that method during the interactive development.
+
 \subsection{Selecting Data Contexts}
 The presented tracing approach generates potentially numerous data contexts for each method.
 Given our tool traces actually live systems deployed at customers, each user interaction might lead to recorded data contexts for all method executions that such interactions trigger.
