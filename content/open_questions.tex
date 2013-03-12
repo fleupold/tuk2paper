@@ -8,8 +8,16 @@ Debugging queries should be completely seamless for integrated and immediate fee
 Developers should not be required to copy complete or parts of embedded queries from their application code to active database sessions to debug their SQL queries, instead, a debugger should be able to step through and evaluate both application code and embedded database queries without interrupting the developer through changing the user interaction or interface.
 A unified user interface for understanding both types of code should present return values, show basic profiling information, and allow to explore involved data.
 Additionally, developers might benefit from exploring and debugging parts of queries.
-However, as parts of SQL queries cannot necessarily be evaluated independently, but instead might depent on other parts of the queries, developers potentially need to select multiple parts in conjunction. \todo{concrete example with code!}
-An ideal data context debugger would, thus, aid developers in selecting meaningful combinations of automatically identified parts of database queries.
+However, as parts of SQL queries cannot necessarily be evaluated independently, but instead might depent on other parts of the queries, developers potentially need to select multiple parts in conjunction.
+Given the following example query, the \texttt{WHERE} as well as the \texttt{SELECT} clause both rely on the join in Line 2 of this example.
+\lstset{language=SQL}
+\begin{lstlisting}
+  SELECT products.name, SUM (orders.price) as pricemake
+  FROM orders JOIN products ON orders.pid=products.pid
+  WHERE orders.year = 2012 and products.manufacturer = "HPI"
+  GROUP BY product
+\end{lstlisting}
+An ideal data context debugger could aid developers also in selecting meaningful combinations of automatically identified, meaningful parts of database queries.
 
 \subsection{Hardware Context}
 Our idea focuses on showing actual results and basic profiling information right next to code and queries.
