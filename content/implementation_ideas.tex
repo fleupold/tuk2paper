@@ -1,24 +1,31 @@
 %!TEX root = ../document.tex
 \section{Implementation Ideas} \label{sec:IMPLEMENTATION_IDEAS}
 %Lauritz
-Besides providing an unobstrusive user interface, either implemented as a plugin for an existing integrated development environment or else implemented in form of a complete development environment, an implementation of our idea would require components that gather data contexts from actual program runs as well as components that support developers in selecting appropriate and interesting data contexts during development.
-
-% maybe also say something about the user interface for selecting data contexts as well as for seeing and modifying state and queries...
+Besides providing an unobstrusive user interface, either implemented as a plugin for an existing integrated development environment or else in form of a complete development environment, an implementation of our idea would primarily require components that gather data contexts from actual program runs as well as components that support developers in selecting appropriate and interesting data contexts during development.
 
 \subsection{Gathering Data Contexts}
-As our approach focuses on providing developers with actual runtime data already during development the user interface of an implementation of our approach depends on the availability of such data.
-Such data needs to be realistic to be useful to developers.
-For this reason, there are two approaches to gathering such runtime data for, for example, showing it when a developer clicks on a line of source code.
-Either, a developer's interaction could trigger a deterministic test that covers a specific piece of code that is of interest to the developer or else to capture such data before.
-Capturing data beforehand obviously also could rely on test runs, but additionaly could be recorded in live systems used by actual customer and, therefore, providing real runtime data.
-Moreover, another advantage of capturing data in advance might be that presenting such recorded data would not depend on running a potentially long-running test, but on fetching the data from a database, which of course also could be an in-memory database.
-A reasonable hybrid solution between those two approaches would record data not for every join point in the execution of the application of interest, but could capture data on the level of specific scopes as, for example, methods.
-To explore actual runtime situations the recorded data contexts of methods must consist of provided parameters, accessible state, as well as a snapshot of the database at the moment the method is entered.
-Snapshots of the database are necessary as the method might modify the database through embedded queries in ways that would not allow subsequent runs of that methods.
-That is, the database has to be snapshot at the entry to be able to execute the method and all included queries as often as necessary for exploration during development.
-\todo{code example}
-%tracing data contexts = snapshots of database and parameters and state, show code examples with parametrized queries
-%from test systems with copies of real customer data or from actually deployed and running customer systems
+As described in Section~\ref{sec:PAPER_PROTOTYPE} and \ref{sec:FINAL_PROTOTYPE}, our envisioned environment always presents relevant runtime data when developers interact with statements as, for example, when they click or hover on single lines of source code.
+Further, developers should be able to evaluate arbitrary lines, including lines containing database queries, to see and understand the effects of their code on the application as well as the database layer.
+That is, our approach relies on providing developers with actual runtime data and real database tables already during development and, therefore, depends on the availability of such data contexts for the presented code base.
+Such data contexts need to be completely realistic and immediately available to be useful to developers.
+Given these requirements, two approaches could provide data contexts for specific code sections of interest to the developer:
+Either, the interactions with particular statements in code trigger deterministic test runs that cover that section or else, tracing the application's execution records data contexts in advance.
+Recording data beforehand obviously also could rely on test runs, but could also be captured in deployed systems used by actual customer to provide evee more realistic runtime data.
+Further, recorded data contexts need just be fetched from a database, which also could be an in-memory database, and, thus, potentially provides data contexts faster than establishing runtime data through running tests.
+The time required to run tests depends on the granularity of the covering tests with a full spectrum from fine-grained, isolated unit tests to high-level, long-running acceptance tests.
+However, running tests to emulate runtime during development would only require to store associations between code and tests, while recording in advance implies storing as much data as necessary to actually run any statements in the sources of an application.
+A reasonable trade-off between space and time consumption, which we would probably investigate first, could record data not on the level of single statements but on the level of method scopes, when we assume deterministic code execution.
+Such an implementation would record all data necessary to actually run a method with all its statement, including provided parameters, accessible state, and the the database at the moment the method is entered, as shown in Figure~\ref{fig:context_recording}.
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{images/context_recording}
+    \caption{Running the statements of this Java method with its embedded SQL query requires all data highlighted in red: the parameter, accessible state, and a database.}
+    \label{fig:context_recording}
+\end{figure}.
+
+When a developer then interacts with a specific line in the method's body, we could use ordinary breakpoints to establish the necessary runtime data for that specific line of interest. 
+Accessible state includes global state and depending on the used programming language also state from surrounding scopes as, for example, from surrounding functions or the receiver.
+Snapshots of the database are necessary as methods that embedd queries might modify the database, potentially impeding subsequent runs of that method during the interactive development.
 \subsection{Selecting Data Contexts}
 These tracing approaches generates potentially numerous data contexts.
 When our tool would trace real deployed systems, it could capture any number of data contexts for a particular scope.
