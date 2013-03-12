@@ -5,27 +5,25 @@ In the future, we would like to investigate how seamless and semantic debugging 
 
 \subsection{Query Debugging}
 Debugging queries should be completely seamless for integrated and immediate feedback while understanding and developing application and database code.
-Developers should not be required to copy complete or parts of embedded queries from their application code to active database sessions to debug their SQL queries, instead, a debugger should be able to evaluate both application code and embedded database queries without interrupting the developer through changing the user interaction or interface.
-A unified user interface for understanding both types of code should present return values, show basic profiling information and allow to explore involved data.
-Additionally, developers might benefit from debugging combinations of parts of queries.
-However, as the parts of SQL queries cannot necessarily be evaluated independently, but instead might require other parts of queries, developers potentially need to select multiple, potentially dependent parts in conjunction. \todo{concrete example with code!}
-An ideal data context debugger would, therefore, aid developers in selecting meaningful combinations of automatically identified subqueries.
-
-%  for example, the select query might depend on the presence of a grouping (show example query), therefore, support developers in identifying meaningful parts of queries to, for example, just activate a part of the conditions available in a given where clause
+Developers should not be required to copy complete or parts of embedded queries from their application code to active database sessions to debug their SQL queries, instead, a debugger should be able to step through and evaluate both application code and embedded database queries without interrupting the developer through changing the user interaction or interface.
+A unified user interface for understanding both types of code should present return values, show basic profiling information, and allow to explore involved data.
+Additionally, developers might benefit from exploring and debugging parts of queries.
+However, as parts of SQL queries cannot necessarily be evaluated independently, but instead might depent on other parts of the queries, developers potentially need to select multiple parts in conjunction. \todo{concrete example with code!}
+An ideal data context debugger would, thus, aid developers in selecting meaningful combinations of automatically identified parts of database queries.
 
 \subsection{Hardware Context}
-Our idea includes showing actual results and basic profiling information right next to queries.
+Our idea focuses on showing actual results and basic profiling information right next to code and queries.
 Assuming deadlock-free, deterministic code the results of queries should be independent of the underlying hardware.
 However, the performance characteristics might depend significantly on the executing hardware.
-Therefore, our approach could be extended to include hardware contexts.
-Further research in this direction should focus on capturing, storing, and applying hardware contexts to either select appropriate hardware or to simulate the performance impact of different hardware contexts.
-Further, another open question is whether data contexts are tied to particular hardware contexts through our tracing.
-Conceptionally developers could gain insights from combining data contexts and hardware contexts arbitrarily to see how their application performs in many different situations.
-However, bundling both contexts emphasizes performance optimization for real usage.
+Therefore, our approach would benefit from incorporating the impact of different hardware by extending our context recording to also capture hardware configurations.
+Further research in this direction should, consequentely, focus on capturing, storing, and applying hardware contexts to either select appropriate hardware  or to simulate impact of different hardware when evaluating statements during development.
+Another open question is whether data contexts should be tied to particular hardware contexts during our tracing.
+Developers could gain insights from combining data contexts and hardware contexts freely to see how their application performs in many different situations.
+However, bundling both contexts emphasizes optimizing performance for real usage.
 
 \subsection{Context Representation}
-As our approach potentially leads to the availability of many similar data contexts for any given situation, an actual implementation of our idea could potentially reduce space consumptions for storing those contexts significantly.
-Such an implementation could select similar data contexts, identify similarities, and, consequentely, store only differences multipe times.
+As our approach potentially results in many similar data contexts for any given code section, an actual implementation of our idea would probably benefit from reducing the space required for storing contexts.
+Such an optimization could try to exploit similarities between data contexts when storing them in, for example, a database.
+An implementation could find similar data contexts, identify common base contexts, and, consequentely, store base contexts once and only the differences to those base contexts for each particular context.
 As data contexts from the same traces using the same database potentially always overlap at least in their database snapshot, but probably also in the accessible state that needs to be captured, marking data contexts with an identifier for a particular trace might allow to identify similar data contexts faster.
 Further, the efficiency of storing data contexts could also apply advanced database features as, for example, HANA's time travel feature \todo{ref?}.
-% locality: (temporal in execution?, spatial in code? -- is that the same)
