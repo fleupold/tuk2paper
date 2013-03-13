@@ -22,7 +22,7 @@ Assuming deterministic code, a reasonable trade-off between space and time consu
 Such an implementation would record all data necessary to actually run a method with all its statement, including provided parameters, accessible state, and the the database at the moment methods are entered, as shown in Figure~\ref{fig:context_recording}.
 
 \begin{figure}
-    \includegraphics[width=\linewidth]{images/context_recording}
+    \includegraphics[width=\linewidth]{images/context}
     \caption{Running the statements of this Java method with its embedded SQL query requires all data highlighted in red: the parameter, accessible state, and the database.}
     \label{fig:context_recording}
 \end{figure}
