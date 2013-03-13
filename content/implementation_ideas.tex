@@ -1,19 +1,22 @@
 %!TEX root = ../document.tex
 \section{Implementation Ideas} \label{sec:IMPLEMENTATION_IDEAS}
 %Lauritz
-As described in Section~\ref{sec:PAPER_PROTOTYPE} and \ref{sec:FINAL_PROTOTYPE}, our envisioned environment always presents relevant runtime data when developers interact with statements.
-Just like in a debugger, when developers, for example, hover over an identifier in their application code or their database queries, they are presented with actual data, either values or rows from database tables.
-Further, and in contrast to most debugging environments, developers should be able to not only see the current state and step through the execution, but actually add and evaluate statements, allowing an interactive style of development based on seeing the effects of their code and queries immediately.
-Both these features rely on the availability of data context for statements.
-A realization of our idea would, therefore, primarily need to implement components that gather all necessary data contexts from actual program runs as well as components that support developers in selecting interesting data contexts during development.
+As described in Section~\ref{sec:PAPER_PROTOTYPE} and \ref{sec:FINAL_PROTOTYPE}, our proposed environment always presents relevant runtime data when developers interact with statements.
+Just like in a debugger, when developers, for example, hover over identifiers in their application code, the IDE presents actual data, either objects or database rows.
+However, in contrast to ordinary debugging environments, developers should not only be able to see the current state and step through the execution, but actually add and evaluate statements.
+This should allow an interactive style of development centered around seeing the impact and effects of their code and queries immediately.
+These features rely on the availability of runtime data.
+First, developers can only see values and database entries for identifiers if such data is available.
+Second, statements that might or might not embedd queries require referred variables and potentially even a database to run.
+A realization of our idea would, therefore, implement components that gather the necessary data contexts from actual program runs as well as components that support developers in selecting interesting data contexts during development.
 
 \subsection{Gathering Data Contexts}
 
-Our approach depends on the availability of data contexts for the current code base.
-Such data contexts need to be realistic and immediately available to be useful to developers.
-Given these premises, two approaches could provide data contexts for specific code sections of interest to the developer:
-Either, deterministic test runs could provide data contexts on demand or tracing the application's execution could record data contexts in advance.
-Running tests to emulate the runtime during development would only require to store coverage information that links code to tests, while recording in advance implies storing as much data as necessary to actually run any statements in the sources of an application.
+Our approach depends on the availability of data contexts for the code sections of interest to the developer.
+Such data contexts need to be realistic and immediately available to be useful.
+Given these premises, two approaches could provide data contexts for specific code sections:
+Either, deterministic test runs could establish data contexts on demand or tracing the application's execution could record data contexts in advance.
+Running tests to provide the runtime during development would only require to store coverage information that associates code sections with test cases, while recording contextual information in advance implies storing as much data as necessary to actually run any statements in the sources of an application.
 The test execution time depends on the granularity of the covering tests with a full spectrum from fine-grained, isolated unit tests to high-level, long-running acceptance tests.
 Previously recorded data contexts, however, need just be fetched from a database, which could also be an in-memory database, and, thus, potentially provides faster access to data contexts compared to establishing runtime data through running tests.
 Fetching recorded data context is also independent of the availability as well as granularity of tests and could also be captured in deployed systems used by real customers to provide more realistic runtime data.
