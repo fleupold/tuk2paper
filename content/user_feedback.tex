@@ -3,7 +3,7 @@
 \section{User Testing and Feedback}
 \label{sec:USER_TESTING}
 
-For testing our paper prototype we interviewed the students from both bachelor's projects at the EPIC chair. (Figure  \ref{fig:user_testing}) They are developing applications based on SAP's HANA technology and are also facing the problems we discovered during our external interviews. The first Team (HP1) investigates In-Memory Data Management for Enhanced ERP while the other (HP2) focuses on Real-time Analysis of Genome Data.
+For testing our paper prototype we interviewed the students from both bachelor's projects at the EPIC chair. (Figure \ref{fig:user_testing}) They are developing applications based on SAP's HANA technology and are also facing the problems we discovered during our external interviews. The first Team (HP1) investigates In-Memory Data Management for Enhanced ERP while the other (HP2) focuses on Real-time Analysis of Genome Data. \\
 
 \begin{figure}
 \begin{centering}
@@ -36,15 +36,21 @@ In the following we present their feedback as well as general insights we gained
 	\item The context panel should also include all relevant test cases, so they do not need any additional testing tools to run their test suite.
 \end{itemize}
 
-
 \subsection{General Feedback during the week}
 \label{subsec:FeedbackWeek}
-	MISSING
+\begin{itemize}
+	\item The code as well as the provided data have to be as tangible as possible and the whole editor as easily navigable as todays mobile and tablet apps.
+
+	\item If the number of data contexts increases, we need a clever selection mechanism or at least a searching inerface.
+
+	\item In addition to whole tables, the inspection of partial queries should be possible as well.
+\end{itemize}
 
 \subsection{Feedback evaluation}
 \label{subsec:FeedbackEvaluation}
-	MISSING
+As shown in Figure \ref{fig:user_feedback}, we organized the feedback in positive and negative and identified open questions and some new ideas worth to explore.
 
+For the next prototype, we removed the table inspection popups and reserved a fixed panel at the bottom for this kind of information. Besides the user interface we added a new field of attention: investigating different mechanisms for handling large numbers of data contexts - regarding the acquiring as well as the relevance filtering and selection.
 
 \begin{figure}
 \begin{centering}
