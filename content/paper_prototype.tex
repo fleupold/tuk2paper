@@ -3,44 +3,45 @@
 \section{Paper Prototype}
 \label{sec:PAPER_PROTOTYPE}
 
+After ideation we started prototyping to get user feedback on our ideas. 
+We focused on the ideas regarding the editor enrichment in order to provide real data previews and performance feedback.
+We decided to build an interactive paper prototype because of the simplicity of paper prototyping and the ability to test the usability of the overall design while manipulating the prototype via Post-its.
+Since we aim to improve developer's productivity this usability testing is crucial for our idea.
 
-Our first prototype 
-Paper Prototyping
-on A3 cardboard
-time-saving
-usability testing
-testing our ideas
-testing graphical interface and interaction/usability, (crucial, since we wanna improve workflow)
-testing design 
+\begin{figure}
+\begin{centering}
+    \includegraphics[width=1.0\linewidth]{images/paper_prototype1}
+    \caption{Our paper prototype}
+    % #selfrespect
+    \label{fig:paper_prototype1}
+\end{centering}
+\end{figure}
 
-python-like programming language, with global syntax highlighting (embedded sql as well)
+We came up with an A3 cardboard that represents our conceived code editor. (Figure \ref{fig:paper_prototype1})
+It shows a piece of code in a Python-like programming language with embedded SQL statements.
+The editor benefits from global syntax highlighting and shows a new panel in the lower left.
+This Panel includes a list of possible data contexts for this particular function.
 
-Looks like a code editor
-with 3 panels
+For the user testing sessions we prepared several Post-its to simulate highlighting, cursor positioning and popup windows. 
+As shown in Figure \ref{fig:paper_prototype1}, we used small, red paper squares to indicate either performance or functional problems in some of the data contexts. 
+A small red arrow hints to the currently selected data context; the small green Post-it represents the cursor and can be moved by the user. The green stripes on the right mark the control flow that was covered by the execution of the currently selected data context. 
+When the user moves the cursor onto the identefier of a table used in the SQL query, a popup is presented that provides relevant information on this table.
+Figure \ref{fig:paper_prototype2} shows an example of these Post-it-popups, when selecting the table "orders". For different tables and data contexts we prepared several Post-its with empty tables, too large tables and single rows that could be attached if the user wants to insert a row.
 
-description:
-small red arrow indicates selected context
-Green post it stripes indicate current control flow
-small red square next to context name indicate
-Green cursor in the sourceCode
+\begin{figure}
+\begin{centering}
+    \includegraphics[width=1.0\linewidth]{images/paper_prototype2}
+    \caption{Table Popup in our paper prototype}
+    % #selfrespect
+    \label{fig:paper_prototype2}
+\end{centering}
+\end{figure}
 
-if one places cursor on a table name inside an SQL query
-
-
-We want to be able to edit the code as well, we focused in our prototype on data inspection, navigation and modification
-
-We had post it overlays with empty tables, too long tables, single rows that could be appended
-
-But not all wanted to edit the data directly... feels possibly strange, ... too new
-
+For our testing scenario we marked one of the contexts as erroneous and another as a performance bottleneck. The tested person was intended to inspect the several tables and examine the performance bottleneck or the program error respectively.
 
 
 
 
-usage scenario:
-  They have code with some problems.
-  Red Squares indicate problems in contexts
-  too big data
-  change had impact on another
-  future
+
+
 
