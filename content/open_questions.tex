@@ -1,18 +1,19 @@
 %!TEX root = ../document.tex
-\section{Open Questions} \label{sec:OPEN_QUESTIONS}
+\section[Open Questions (Author: Lauritz Thamsen)]{Open Questions} \label{sec:OPEN_QUESTIONS}
 %Lauritz
-In the future, we would like to investigate how seamless and helpful debugging of complete and partial SQL queries could be realized and integrated with our idea, whether and how actual hardware configurations could be considered as part of the data contexts from runtime, and how data contexts could be stored efficiently.
+In the future, we would like to investigate how seamless and helpful debugging of complete and partial SQL queries could be realized and integrated with our idea.
+Whether and how actual hardware configurations could be considered as part of the Data Contexts from runtime, and how data contexts could be stored efficiently.
 
 \subsection{Query Debugging}
 Query debugging should be seamless.
-It should provide immediate feedback while understanding and developing both application code and database queries.
-Developers should, thus, not be required to use two tools to debug code.
-They should not need to copy complete or parts of embedded queries from their application code to active database sessions.
-Instead, an integrated debugger should be able to step through and evaluate both application code and embedded database queries without interrupting the developer through changing the user interactions or interface.
+The tool should provide immediate feedback while understanding and developing both application code and database queries.
+Thus, a developer should not be required to use two tools to debug code.
+The goal must be to dispense with the approach of copying complete or parts of embedded queries from application code to active database sessions.
+Instead, we envision an integrated debugger that enables to step through and evaluate both application code and embedded database queries without forcing the developer into context switches, such as changing user interactions or interfaces.
 It should present return values, show basic profiling information, and allow to explore involved data.
 
 Developers might also benefit from exploring the parts of queries.
-However, as parts of SQL queries cannot necessarily be evaluated independently but might depent on other parts of the queries, developers potentially need to select multiple associated parts in conjunction.
+However, as parts of SQL queries cannot necessarily be evaluated independently as they might depend on other parts of the queries, developers potentially need to select multiple associated parts in conjunction.
 For example, given the following query, the \texttt{WHERE} as well as the \texttt{SELECT} clause both rely on the \texttt{JOIN} in Line 2 of this example.
 \lstset{language=SQL}
 \begin{lstlisting}
@@ -21,7 +22,7 @@ For example, given the following query, the \texttt{WHERE} as well as the \textt
   WHERE orders.year = 2012 and products.manufacturer = "HPI"
   GROUP BY product
 \end{lstlisting}
-An ideal data context debugger could aid developers also in selecting combinations of automatically identified meaningfull parts of database queries.
+An ideal Data Context debugger would aid developers also in selecting combinations of automatically identified meaningful parts of database queries.
 
 \subsection{Hardware Contexts}
 Our idea focuses on showing actual results and basic profiling information right next to code and queries.
@@ -30,17 +31,17 @@ However, the profiling information might depend significantly on the executing h
 Therefore, our approach would benefit from incorporating the impact of different hardware configurations.
 Such hardware contexts should, thus, also be part of the data recorded at runtime.
 We would focus further efforts in this directions on the capturing, storing, and application of hardware contexts.
-Such hardware contexts could be used to either actually run statements on the associated hardware or to simulate the impact somehow.
+Such hardware contexts could be used to either run statements on the associated hardware or to simulate the impact somehow.
 
-A related question is whether data contexts should be tied to particular hardware contexts during our tracing.
-Developers could gain insights from combining data contexts and hardware contexts freely to see how their application performs in many different situations.
+A related question is whether Data Contexts should be tied to particular hardware contexts during our tracing.
+Developers could gain insights from combining Data Contexts and hardware contexts freely to see how their application performs under different circumstances.
 However, bundling both contexts emphasizes optimizing performance for real usage.
 
 \subsection{Context Representation}
-As our approach potentially results in many similar data contexts for any given code section, storing data contexts could probably exploit these similarities between data contexts.
-An implementation could identify similar data contexts, generate common base contexts, and, consequentely, store only the differences to those base contexts for each particular context.
+For any given code section our approach potentially results in many similar Data Contexts. Storing those could probably exploit these similarities.
+An implementation could identify similar Data Contexts, generate common base contexts, and for each particular context store only the differences to the bases.
 
-As data contexts from the same traces potentially overlap with a high probability, marking data contexts with an identifier to indicate the used trace might allow to identify similar data contexts faster.
+As Data Contexts from the same traces most likely overlap, marking them with an identifier to indicate the used trace might allow to identify similar Data Contexts faster.
 
-Further, the efficiency of storing data contexts could proably also leverage advanced database features as, for example, \emph{SAP HANA's Time Travel} feature~\footnote{\url{http://help.sap.com/hana/html/sql_create_table_history_time_travel.html}, retrieved March 12, 2013} that allows to reset the database to a specific moment in time.
-Given this feature, an implementation would need to store only timestamps to establish the database part of data contexts instead of actual database snapshots.
+Further, the efficiency of storing Data Contexts could probably also leverage advanced database features as, for example, \emph{SAP HANA's Time Travel} feature~\footnote{\url{http://help.sap.com/hana/html/sql_create_table_history_time_travel.html}, retrieved March 12, 2013}, which allows to reset the database to a specific moment in time.
+Given this feature, an implementation would need to store only timestamps to establish the database part of Data Contexts instead of actual database snapshots.

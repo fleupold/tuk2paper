@@ -3,7 +3,7 @@
 \section{User Testing and Feedback}
 \label{sec:USER_TESTING}
 
-For testing our paper prototype we interviewed the students from both bachelor's projects at the EPIC chair. (Figure \ref{fig:user_testing}) They are developing applications based on SAP's HANA technology and are also facing the problems we discovered during our external interviews. The first Team (HP1) investigates In-Memory Data Management for Enhanced ERP while the other (HP2) focuses on Real-time Analysis of Genome Data. \\
+We were able to test our paper prototype with the students from both Bachelor's project teams of the HPI EPIC chair(Figure \ref{fig:user_testing}). Both teams develop applications based on SAP's HANA technology and also faced problems similar to the ones we had discovered during our interviews. One team investigates \emph{In-Memory Data Management for Enhanced ERP} while the other focuses on \emph{Real-time Analysis of Genome Data}.
 
 \begin{figure}
 \begin{centering}
@@ -14,43 +14,44 @@ For testing our paper prototype we interviewed the students from both bachelor's
 \end{centering}
 \end{figure}
 
-In the following we present their feedback as well as general insights we gained during the workshop week from Hasso Plattner and some of the tutors.
+In the following we present their feedback as well as general insights we gained during the 5-day-workshop that was part of the seminar as well as from Hasso Plattner and some of the tutors.
 
 \subsection{Feedback from Bachelor's Project HP1}
 \label{subsec:FeedbackBPHP1}
 \begin{itemize}
-	\item Popups are nice, but they occlude the underlying code. Even if they would be detachable and could be positioned freely on the screen, this would lead to a cluttered workspace and thus result in an inferior workspace.
+	\item The team generally welcomed the idea of popup windows, but criticized the fact that they occlude parts of the underlying code. Even if detachable ones that could be freely positioned on the screen would still lead to a cluttered workspace and thus result in an inferior workspace.
 
-	\item For maximum productivity they would rather use keyboard shortcuts instead of clicking with your mouse on the data entitites in the code.
+	\item For maximum productivity they rather prefer keyboard shortcuts instead of the mouse pointer to interact with the data entities in the code.
 
-	\item Screen real estate is important for developers, even on todays large screen monitors. So, we should keep that in mind while providing more and more information of the underlying data context.
+	\item Developers appreciate tidy screens, even on nowadays large monitors. Hence, the amount of provided information is to be treated with care.
 \end{itemize}
 
 \subsection{Feedback from Bachelor's Project HP2}
 \label{subsec:FeedbackBPHP2}
 \begin{itemize}
-	\item The concept of a data context is hard to grasp when presented initially.
+	\item The students find the concept of a Data Context hard to grasp when presented initially.
 
-	\item They liked the immediate feedback in the context panel and appearing warnings or hints next to a context, if some of their code changes result in unintended behaviour on other contexts.
+	\item They liked the immediate feedback in the Data Context Panel as well as the warning or hint symbols that appear next to a context, when some of their code changes resulted in unintended behavior on other contexts.
 
-	\item The context panel should also include all relevant test cases, so they do not need any additional testing tools to run their test suite.
+	\item They wished the Data Context Panel would also include all relevant test cases, so any additional testing tools to run their test suite would become expendable.
 \end{itemize}
 
-\subsection{General Feedback during the week}
+
+\subsection{General Feedback during the 5-day-worshop}
 \label{subsec:FeedbackWeek}
 \begin{itemize}
 	\item The code as well as the provided data have to be as tangible as possible and the whole editor as easily navigable as todays mobile and tablet apps.
 
-	\item If the number of data contexts increases, we need a clever selection mechanism or at least a searching inerface.
+	\item Once the number of Data Contexts increases, some clever selection mechanism or at least a searching interface might become indispensable.
 
-	\item In addition to whole tables, the inspection of partial queries should be possible as well.
+	\item In addition to whole tables, the inspection of partial queries would be desirable as well.
 \end{itemize}
 
 \subsection{Feedback evaluation}
 \label{subsec:FeedbackEvaluation}
-As shown in Figure \ref{fig:user_feedback}, we organized the feedback in positive and negative and identified open questions and some new ideas worth to explore.
+As shown in Figure \ref{fig:user_feedback}, we categorized the feedback into positive and negative, identified open questions as well as some new ideas worth to explore. Some of the ideas described in Chapter \ref{sec:IDEATION} originate from this feedback evaluation step.
 
-For the next prototype, we removed the table inspection popups and reserved a fixed panel at the bottom for this kind of information. Besides the user interface we added a new field of attention: investigating different mechanisms for handling large numbers of data contexts - regarding the acquiring as well as the relevance filtering and selection.
+For the next iteration of our prototype, we removed the table inspection popup windows and instead reserved a fixed panel at the bottom to display their content. Besides the user interface we added a new field of attention: investigating different mechanisms for handling large numbers of Data Contexts - regarding the acquiring as well as the relevance filtering and selection.
 
 \begin{figure}
 \begin{centering}

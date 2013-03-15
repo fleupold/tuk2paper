@@ -1,63 +1,63 @@
 %!TEX root = ../document.tex
-During our research, we interviewed various people in sofware companies. In this section we will summarize the interviews and the insights we gained from them.
+During our research, we spoke to various developers, architects and managers in the software industry. Company sizes ranged from small startups to big players of a few thousands employees. In this section we will summarize the interviews and the insights we gained from them.
 
 \subsection{Interviews}
-\subsubsection{Danny Tramnitzke from Psipenta}
-The company \emph{Psipenta} builds an ERP system for SMBs with a focus on manufactoring and supply chain management. Their core product was developed initially in Cobol and parts have later been and are still ported to C++ and Java. Development happens largely in the Eclipse IDE, which has been extended and customized by Psipenta with automated code generation and integration into their workflow and environment. Work is flexible with home and remote work.
+\subsubsection{Danny Tramnitzke from PSIpenta}
+The company \emph{PSIpenta} builds ERP systems for SMBs with a focus on manufacturing and supply chain management. Their core product has initially been developed in Cobol. Parts have later been ported to \emph{C++} and \emph{Java} and is still in progress. Development happens largely in the Eclipse IDE, which has been extended and customized by PSIpenta to enable automated code generation and integration into their workflow and environment. Work is flexible with home and remote work.
 
-Our interview partner Danny is working on porting parts of the old code from Cobol to Java as well as developing entirely new features.
+Our interview partner Danny works on porting parts of the old code from Cobol to Java but also develops entirely new features.
 
-Danny estimates the time spent in daily communication at around 30\%. This includes answering emails and attending meetings with colleagues.
+Danny estimated the time spent in daily communication at around 30\%. This includes replying to emails and attending meetings with colleagues.
 
-In the interview, Danny put an emphasis on code quality. A core means to achieve this was automated testing, best done by involving the customer directly.
+In the interview, Danny put an emphasis on code quality. To him, a core means to achieve this was automated testing, best done by involving the customer directly.
 
-As major churns Danny mentioned interruptions from co-workers as well as from a slow and/or unintuitive tool chain. As example he mentioned that building a running version of his product to manually test it takes more than half an hour.
+As major churns Danny mentioned interruptions from co-workers as well as from a slow and/or unintuitive tool chains. As an example he mentioned that building a manually testable version of his product takes more than half an hour.
 
 \subsubsection{Nicole von Steht from SAP}
-SAP is one of the biggest enterprise application companies in the world. Nicole works as Frontend application developer at SAP. Her team consists of 12 people and uses the Scrum methodology. The team is located on one floor and communicates mostly face-to-face.
+\emph{SAP} is one of the biggest enterprise application companies in the world. Nicole works as frontend application developer at SAP. Her team consists of twelve people and uses the \emph{Scrum} methodology. The team is located on one floor and communicates mostly face-to-face.
 
-Code quality is a core value to her. It is assured by unit and integration tests with continuous integration as well as rotating pair programming. Nicole writes code in a customized version of Eclipse.
+As one of her core values, she pointed out quality of code. She stated to take care of its assurance by unit and integration tests with continuous integration as well as rotating pair programming. She said that her development environment was a customized version of Eclipse.
 
 \subsubsection{Tillman Giese from SAP}
-Tillman is working at SAP on the HANA Security Engine. His team consists of 8 people and is split over 2 offices.
+Tillman works at SAP on the \emph{HANA Security Engine}. His team consists of eight people and is split over two offices.
 
-Tillman regularly deals with other teams that are globally distributed. This is often difficult because of time zone and cultural differences. Tillman gets a lot of support requests, which he said most of the time are querstions that are already answered generally. The request could have resolved the questions themselves, if they would have put in some effort to research the question in the first place. Often, the requests interrupt his workflow. To illustrate this state, Tillman said: \emph{I wish I could just work on one task for a full hour}.
+Tillman regularly deals with other teams that are globally distributed. He said this was often difficult because of time differences as well as cultural ones. Tillman reported to get a lot of support requests, which most of the time would aim at already answered questions. Requesters could resolve the questions themselves, if they put in some effort to research in the first place. Often, he said, those requests would interrupt his workflow, illustrated by this quote: \emph{"I wish, I could just work on one task for a full hour"}.
 
 \subsubsection{Frank Brunswig from SAP}
 Frank is working as Chief Architect at SAP. He has been involved with the company for 20 years, worked on various projects and currently supervises the creation of the AppBuilder platform, which enables the creation of custom mobile applications.
 
-Apart from doing small prototype implementations to evaluate a new technology, Frank does not code regularly. His work mainly happens on a organizational level, where he performs requirement anaysis, organizes his teams, maintains the cross-organizsation-alignment and finds cross-team synergies.
+Apart from doing small prototype implementations to evaluate new technologies, Frank does not code regularly. His work mainly happens on a organizational level, where he performs requirement analyses, organizes his teams, maintains the cross-organization-alignment and finds cross-team synergies.
 
-For coding and in his teams Frank prefers all-in-one IDE solutions, which in the best case integrate the complete workflow from finding the requirements over writing code to the final deployment.
+Frank prefers his teams to use all-in-one IDE solutions for coding, which in the best case would integrate the complete workflow from finding requirements over writing code to the final deployment.
 
-His major problem in development are unclear or changing requirements. He is also not an advocate of Agile Methodology, because they badly distribute responsibilities and make the development process harder to control.
+His major problems in development are unclear or changing requirements. He is also not an advocate of \emph{Agile} methodologies, as they would badly distribute responsibilities and make the development process harder to control.
 
 \subsubsection{Christof Dorner from Readmill}
-The Berlin-based startup Readmill builds an ebook reader and a social network around books. Christof is Backend Developer for the Ruby on Rails application. He works in a development team of 4. The team works with the Kanban methodology.
+The Berlin-based startup \emph{Readmill} build an ebook reader and a social network around books. Christof is a backend developer for the \emph{Ruby on Rails} application. His team, consisting of him and another three members,  works with the \emph{Kanban} methodology.
 
-Christof mentioned an uninterrupted workflow as an important goal for his day-to-day work. To minimize interruptions through his co-workers, they set up an asynchronous company chat that allows everyone to drop in and out of discussions according to their own likings. Christof always wears noise-canceling headphones when coding alone. He optimized his tools highly to reduce any waiting time while working. This includes customizing his editor and writing small scripts for churn tasks. Furthermore, when choosing the technology for Readmill, the whole team takes into account how easy development with this technology will be. Readmill make developer satisfaction one of the most important components during the technology decision process.
+Christof mentioned an interruption-free workflow as an important goal for his day-to-day work. To minimize interruptions through his co-workers, they set up an asynchronous company chat that allows everyone to drop in and out of discussions according to their own likings. Christof always wears noise-canceling headphones when coding alone. He optimized his tools highly to reduce any waiting time while working. This includes customizing his editor and writing small scripts for churn tasks. Furthermore, when choosing the technology for Readmill, the whole team takes into account how easy development with this technology will be. Readmill make developer satisfaction one of the most important components during the technology decision process.
 
-Tests are a core component of Christof's workflow for developing new features or fixing bugs. He does not do straight test-driven development but rather switches between writing code, testing on the console or web app and writing tests seamlessly. He puts an emphasis on the fact that all deployed code has a high test coverage. Code review are done via Pull Requests on Github.
+Tests are a core component of Christof's workflow for developing new features or fixing bugs. He does not follow straight test-driven principles but rather switches between writing code, testing on the console or web app, and writing tests seamlessly. He puts an emphasis on the fact that all deployed code has a high test coverage. Code reviews are done via Pull Requests on \emph{Github}.
 
-As problems while developing, Christof mentioned refactoring of old code (especially tests), reproducing bugs and interruptions of any kind.
+As problems while developing, Christof mentioned refactoring of old code (especially tests), reproducing bugs, and interruptions of any kind.
 
 \subsubsection{Ralf Tomczak, Andr\'e, Holger and Oliver from Mobile.de}
-The eBay subsidiary Mobile.de is located in Berlin/Dreilinden and is Germany's biggest online marketplace for vehicles. Ralf is the head of technology and was responsible for migrating the web platform from Perl to eBay's prevalent programming language Java in 2007. Andr\'e, Holger and Oliver are team leads of the consumer, commercial and mobile segment respectively.
+The \emph{eBay} subsidiary \emph{Mobile.de} is located in Berlin/Dreilinden and is Germany's biggest online marketplace for vehicles. Ralf is the head of technology and was responsible for migrating the web platform from \emph{Perl} to eBay's prevalent programming language \emph{Java} in 2007. Andr\'e, Holger and Oliver are team leads of the consumer, commercial and mobile segment respectively.
 
-They all mentioned the agile development style as being crucial for their cross-functional teams. During the last years of Scrum methodology and especially Kanban-like processes they were able to replace their weekly release cycles with multiple rollouts per day. They stated that this increased velocity helps them to fix bugs usually within a day.
+They all mentioned agile development as being crucial for their cross-functional teams. During the last years of Scrum methodology and especially Kanban-like processes they were able to replace their weekly release cycles with multiple rollouts per day. They stated that this increased velocity helped them to fix bugs usually within a day.
 
 From an architectural viewpoint, one of the biggest problems they mentioned was implementing internationalization in their platform. Characteristics of the different countries have to be considered, but due to their shared database, changes for one country sometimes result in unintended side effects for others.
 
-\subsubsection{Svetlana XXX from Alacris Theranostics} \todo{name? patrick!} Alacris is a small german company developing new approaches for the treatment of cancer. We spoke to XXX \todo{name}, who is part of the software development team. Her biggest problem is that she is working on a software system of which none of the original developers is in the team. She mentioned that code quality is a major problem, documentation is inadequate and there is no test suite.
+\subsubsection{Svetlana Peycheva from Alacris Theranostics} \emph{Alacris} are a small German pin-off company from Max-Plank Institute and do analyses to support cancer treatment. We spoke to Svetlana, who is the only software developer in the team. Her biggest problem is that the software system she develops is based on code written by multiple developers in the past, none of which is still part of the team or even reachable. She mentioned that therefore the major problems would be dreadful code quality, inadequate documentation, and the lack of any test suite.
 
-\subsubsection{Guenther Tolkmit from VMS} At VMS we spoke to Guenther, who is a software engineer working on database integrations. During the interview he mentioned that working on real user data is superior to generated test data. Also he mentioned that he spends a lot of time debugging code, but often feels a lack of tool support for efficient debugging. This is why he often uses trial-and-error debugging, which he sees as a bad practice.
+\subsubsection{Guenther Tolkmit from VMS} At \emph{VMS} we spoke to Guenther, who is a software engineer working on database integrations. During the interview he mentioned how working on real user data was superior to generated test data. He also pointed out to spend a lot of time debugging code while often feeling the lack of tool support to efficiently do so. This is why his usual approach involves trial-and-error debugging, which he sees as a bad practice.
 
-\subsection{Summary} We interviewed a wide variety of programmers with very different problems. Especially programmers in big companies seemed to have problems that were not of technical but rather organizational nature. We decided it is not possible for us to work on these problems in the context of our project, but that we would focus on technical problems.
+\subsection{Summary} We interviewed a wide variety of programmers with very different problems. Especially programmers in big companies seemed to have problems that were not of technical but rather organizational nature. We did not consider those problems suitable to be worked on in the context of our project, but rather decided to focus on technical issues.
 
-Even though the interviewees were very heterogenious, we were able to gain some insights:
+Even though the interviewees were very heterogenous, we were able to gain some insights:
 
-\paragraph{Efficient tools are key to successful development} All developers we spoke to had a big interest in the tools they use and were passionate about tooling. They customize their tools themselves, add plug-ins and tinker with the configuration. Some build and maintain tools themselves. One company even had a dedicated group just for tool support.
+\paragraph{Efficient tools are key to successful development} All developers we spoke to showed big interest in the tools they use and were passionate about tooling. They customize their tools themselves, add plug-ins and tinker with configurations. Some build and maintain tools themselves and one company even dedicated a whole group just for tool support.
 
-When asked about the impact of tools on their development process, we heard strong opinions from describing how disfuntional tools limit the productivity of the developer up to that the well-functioning tools of the company are a major competitive advantage.
+When asked about the impact of tools on their development process, we heard strong opinions from describing how unfunctional tools limited the productivity of the developer up to that well-functioning tools of the company would make for major competitive advantages.
 
-\paragraph{Programmers work best when in flow} Many programmers told us about their need for uninterrupted work, the so-called flow when they fully emerge their mind in the task at hand. But for many, flow seemed to be rare in their day-to-day work. Instead interruptions seem to be the norm. The threshold over what constitutes as an interruption ranged from small things like switching windows over waiting longer times e.g. for a test run to complete to being removed from the coding situation e.g. by attending a meeting.
+\paragraph{Programmers work best when in flow} Many programmers told us about their need for uninterrupted work, the so-called flow when they fully emerge their mind in the task at hand. But for many, a seamless workflow seemed to be rare in their day-to-day processes as interruptions appeared to happen a lot more often than desired. The threshold over what constitutes as an interruption ranged from small things like switching windows over waiting longer times (e.g. for a test run to complete) to being removed from the coding situation (e.g. by attending a meeting).

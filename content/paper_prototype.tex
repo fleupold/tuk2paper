@@ -1,12 +1,12 @@
 %!TEX root = ../document.tex
 
-\section{Paper Prototype}
+\section[Paper Prototype (Author: Thomas B\"unger]{Paper Prototype}
 \label{sec:PAPER_PROTOTYPE}
 
 After ideation we started prototyping to get user feedback on our ideas. 
-We focused on the ideas regarding the editor enrichment in order to provide real data previews and performance feedback.
-We decided to build an interactive paper prototype because of the simplicity of paper prototyping and the ability to test the usability of the overall design while manipulating the prototype via Post-its.
-Since we aim to improve developer's productivity this usability testing is crucial for our idea. \\
+We focused on our ideas regarding the editor enrichment in order to provide real data previews and performance feedback.
+We built an interactive prototype to test our overall design. For the reasons quick creation and low expenses as already pointed out in chapter \ref{sec:DESIGN_THINKING} we decided to use a paper prototype. Utilizing \emph{Post-Its} enabled us to manipulate its appearance and therefore added an suggested interactivity.
+Since we aim to improve developer's productivity this way of usability testing was crucial for our idea. \\
 
 
 \begin{figure}
@@ -18,22 +18,21 @@ Since we aim to improve developer's productivity this usability testing is cruci
 \end{centering}
 \end{figure}
 
-We came up with an A3 cardboard that represents our conceived code editor. (Figure \ref{fig:paper_prototype2})
-It shows a piece of code in a Python-like programming language with embedded SQL statements.
-The editor benefits from global syntax highlighting and shows a new panel in the lower left.
-This Panel includes a list of possible data contexts for this particular function.\\
+From a DIN A3 format cardboard we tinkered a representation of our conceived code editor. (Figure \ref{fig:paper_prototype2})
+It displays a piece of code in a \emph{Python}-inspired programming language with embedded SQL statements.
+The editor features global syntax highlighting and, compared to conventional code editors, introduces a new panel in the lower left. The \emph{Data Context Panel} lists all possible Data Contexts for this particular function.\\
 
-For the user testing sessions we prepared several Post-its to simulate highlighting, cursor positioning and popup windows. 
-As shown in Figure \ref{fig:paper_prototype2}, we used small, red paper squares to indicate either performance or functional problems in some of the data contexts. 
-A small red arrow hints to the currently selected data context; the small green Post-it represents the cursor and can be moved by the user. 
-The green stripes on the right mark the control flow that was covered by the execution of the currently selected data context. \\
+For the user testing sessions we prepared several Post-its to simulate highlighting, cursor positioning and popping up windows. 
+As shown in Figure \ref{fig:paper_prototype2}, small red paper squares indicate either performance or functional problems in some of the Data Contexts. 
+A small red arrow hints to the currently selected Data Context. The small green Post-it represents the cursor that the user can interact with. 
+The green stripes on the right mark the control flow that the execution of the currently selected data context covers. \\
 
-When the user moves the cursor onto the identefier of a table used in the SQL query, a popup is presented that provides relevant information on this table.
-Figure \ref{fig:paper_prototype2} shows an example of these Post-it-popups, when selecting the table "orders". 
-For different tables and data contexts we prepared several Post-its with empty tables, too large tables and single rows that could be attached if the user wants to insert a row.\\
+When the user moves the cursor onto the identifier of a table used in the SQL query, a popup is presented that provides relevant information on this table.
+Figure \ref{fig:paper_prototype2} shows an example of these Post-it popups, when selecting the table \emph{"orders"}. 
+For different tables and Data Contexts we prepared several Post-its with empty tables, too large tables, and single rows. The latter could be attached in case the user inserted a new row.\\
 
 For our testing scenario we marked one of the contexts as erroneous and another as a performance bottleneck. 
-The tested person was intended to inspect the several tables and examine the performance bottleneck or the program error respectively.
+The test person was intended to inspect the several tables and examine the performance bottleneck or the program error respectively.
 
 
 
