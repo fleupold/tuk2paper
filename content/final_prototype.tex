@@ -2,7 +2,8 @@
 
 \section[Final Prototype (Author: Fabian Tschirschnitz)]{Final Prototype}
 \label{sec:FINAL_PROTOTYPE}
-Our final prototype, including all feedback we gained through user testing, is a mock-up for an Eclipse plugin that addresses the observed needs of database developers. Figure \ref{fig:final_prototype_overview} illustrates a potential interface of our final revision.
+Our final prototype, in which we included the feedback gained through user testing, is a mock-up of an Eclipse plugin that addresses the observed needs of software developers. Figure \ref{fig:final_prototype_overview} illustrates a potential interface of our final revision. The UI consists of the following three major parts:
+
 \begin{figure}
 \begin{centering}
     \includegraphics[width=1.0\linewidth]{images/final_prototype}
@@ -11,12 +12,13 @@ Our final prototype, including all feedback we gained through user testing, is a
     \label{fig:final_prototype_overview}
 \end{centering}
 \end{figure}
-The UI mainly consists of the following three parts:
-\begin{description}
-	\item [Code Editor] The \emph{Code Editor} builds on top of the standard Eclipse built-in editor, with some added enhancements like syntax highlighting for inline SQL statements and an instant indications for code coverage, which can be seen on the right side of the editor's pane. The latter visualizes the code branches that will be executed depending on the currently selected data context.
-	\item [Live-SQL] In the \emph{Live-SQL} frame on the bottom of the IDE, the developer gets instant data access to the underlying database tables and views. It is also possible to explore the result sets of sub-queries. Furthermore, the data is fortified with runtime information and data heuristics. %We will as you can see later.
-	\item [Context Browser] The \emph{Context Browser} allows the developer to navigate through different data contexts. Some contexts ask for special attention from the programmer, e.g. those evoking errors or slowing down runtime, and are highlighted by an icon appearing next to their names. %check ob das mit dem icon noch so stimmt.
-\end{description}
+
+\paragraph{Code Editor} Built on top of the standard Eclipse built-in editor, our editor adds some enhancements like syntax highlighting for inline SQL statements and instant indications for code coverage, which can be seen on the right side of the editor's pane. The latter visualizes the code branches that will be executed depending on the currently selected data context.
+
+\paragraph{Live-SQL} The frame at the bottom of the IDE enables the developer instant data access to the underlying database tables and views. It is also possible to explore the result sets of sub-queries. Furthermore, the data is fortified with runtime information and data heuristics. %We will as you can see later.
+
+\paragraph{Data Context Browser} The developer navigates through different data contexts using the Data Context Browser. Some contexts ask for special attention from the programmer, e.g. those evoking errors or slowing down runtime, and are highlighted by an icon appearing next to their names. %check ob das mit dem icon noch so stimmt.
+
 In the following section we lay down the main features of the customized IDE and how the user can easily interact with this new environment.\\
 In order to always provide the programmer with all available Data Context, our solution focuses on instant and easy access to the underlying database at any time. When the the developer selects a table, view, or sub-select in his SQL-statement our IDE responds with an immediate preview of the corresponding data, illustrated in Figure \ref{fig:final_prototype_instant}. Furthermore the system displays meaningful visualizations of the data to give hints on performance issues, e.g. the size and the fetch time of the relation. Note how this approach not only allows for a permanent connection between code and Data Contexts but also dispenses with any workflow interruptions as they often appear in nowadays solutions. Therefore our solution allows for a highly comfortable development process.\\
 \begin{figure}
